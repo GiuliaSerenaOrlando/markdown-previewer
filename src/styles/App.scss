@@ -1,0 +1,101 @@
+:root {
+  --bg-light: #f9fafb;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --accent: #3b82f6;
+  --font-main: "Inter", "Segoe UI", sans-serif;
+  --font-code: "Fira Code", monospace;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--bg-light);
+  color: var(--text-main);
+}
+
+.App {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .section {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  #editor,
+  #preview {
+    height: 300px;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    font-family: var(--font-code);
+    resize: none;
+    overflow: auto;
+  }
+
+  #editor {
+    &:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+  }
+
+  #preview {
+    line-height: 1.7;
+    font-size: 1rem;
+    overflow-wrap: break-word;
+
+    h1 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.2s;
+
+      &:hover {
+        border-bottom: 1px solid var(--accent);
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 6px;
+      display: block;
+    }
+  }
+}
